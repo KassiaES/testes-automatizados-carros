@@ -4,22 +4,30 @@ package model;
 //Tesla
 public class Carro {
 
-        private String  marca;
-        private String modelo;
-        private String cor;
-        private int potencia;
-        private boolean isLigado;
-        private int velocidadeAtual;
-        private int velocidadeMaxima;
+    private String cor;
+    private String marca;
+    private String modelo;
+    private int ano;
+    private boolean ligado;
+    private int velocidadeAtual;
+    private int velocidadeMaxima;
 
-    public Carro(String marca, String modelo, String cor, int potencia, int velocidadeMaxima) {
+    public Carro(String cor, String marca, String modelo, int ano, int velocidadeMaxima) {
+        this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
-        this.cor = cor;
-        this.potencia = potencia;
-        this.isLigado = false;
+        this.ano = ano;
+        this.ligado = false;
         this.velocidadeAtual = 0;
         this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     public String getMarca() {
@@ -38,28 +46,20 @@ public class Carro {
         this.modelo = modelo;
     }
 
-    public String getCor() {
-        return cor;
+    public int getAno() {
+        return ano;
     }
 
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public int getPotencia() {
-        return potencia;
-    }
-
-    public void setPotencia(int potencia) {
-        this.potencia = potencia;
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 
     public boolean isLigado() {
-        return isLigado;
+        return ligado;
     }
 
     public void setLigado(boolean ligado) {
-        isLigado = ligado;
+        this.ligado = ligado;
     }
 
     public int getVelocidadeAtual() {
@@ -81,13 +81,14 @@ public class Carro {
     @Override
     public String toString() {
         return "Carro{" +
-                "marca='" + marca + '\'' +
+                "cor='" + cor + '\'' +
+                ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
-                ", cor='" + cor + '\'' +
-                ", potencia='" + potencia + '\'' +
-                ", isLigado=" + isLigado +
+                ", ano='" + ano + '\'' +
+                ", ligado=" + ligado +
                 ", velocidadeAtual=" + velocidadeAtual +
                 ", velocidadeMaxima=" + velocidadeMaxima +
                 '}';
     }
+
 }
